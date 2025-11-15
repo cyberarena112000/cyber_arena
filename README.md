@@ -6,6 +6,7 @@ npm install
 python -m venv venv
 
 to open the website: 
+
 in frontend dir run: npm run dev
 
 in backend dir run: source .venv/bin/activate
