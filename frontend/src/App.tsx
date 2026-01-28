@@ -1,19 +1,7 @@
-import Header from "./components/Header";
-import Hero from "./components/Hero";
+import AppRouter from "./router";
 
-export default function App() {
-  return (
-    <>
-      <Header />
-
-      <main className="px-6">
-        <Hero />
-
-        <div className="mt-10">
-          Page content
-        </div>
-      </main>
-    </>
-  );
+function App() {
+  return <AppRouter />;
 }
 
+export default App;

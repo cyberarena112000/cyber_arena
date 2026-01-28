@@ -1,5 +1,3 @@
-import React from "react";
-import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   return (
@@ -16,7 +14,6 @@ export default function Header() {
         <nav className="flex items-center gap-3">
           <a href="#tools" className="text-sm text-gray-700 hover:text-primary">Tools</a>
           <a href="#notes" className="hidden sm:inline text-sm px-3 py-2 rounded-md bg-primary/10 text-primary">Security</a>
-          <ThemeToggle />
         </nav>
       </div>
     </header>
