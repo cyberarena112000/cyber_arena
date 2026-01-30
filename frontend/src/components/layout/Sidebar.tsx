@@ -5,12 +5,20 @@ import {
     ShieldAlert,
     MessageSquare,
     User,
-    Info
+    Info,
+    LogOut
 } from "lucide-react";
+import { useAuth } from "../../context/AuthContext";
 
 export default function Sidebar() {
     const navigate = useNavigate();
     const location = useLocation();
+    const { logout, user } = useAuth();
+
+    const handleLogout = () => {
+        logout();
+        navigate('/login');
+    };
 
     return (
         <aside className="w-64 flex-shrink-0 flex flex-col pt-16 pb-4 bg-[#1a222c] border-r border-slate-700/30">
@@ -39,8 +47,27 @@ export default function Sidebar() {
             </nav>
 
             <div className="px-4 space-y-2 mt-auto">
-                <NavItem icon={<User size={20} />} label="My Account" />
+                {/* User Info */}
+                {user && (
+                    <div className="px-4 py-3 mb-2 bg-slate-800/50 rounded-xl border border-slate-700/50">
+                        <div className="flex items-center gap-2">
+                            <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-full flex items-center justify-center">
+                                <User size={16} className="text-white" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                                <p className="text-sm font-medium text-white truncate">{user.username}</p>
+                                <p className="text-xs text-slate-400 truncate">{user.email}</p>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
                 <NavItem icon={<Info size={20} />} label="About Us" />
+                <NavItem
+                    icon={<LogOut size={20} />}
+                    label="Logout"
+                    onClick={handleLogout}
+                />
             </div>
         </aside>
     );

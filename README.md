@@ -9,6 +9,7 @@ to open the website:
 
 in frontend dir run: npm run dev
 
-in backend dir run: source .venv/bin/activate
+in backend dir run:
+source .venv/bin/activate
 
-		uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
