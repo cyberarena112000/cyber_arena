@@ -1,4 +1,3 @@
-import React from "react";
 import ToolCard from "./ToolCard";
 
 const tools = [
